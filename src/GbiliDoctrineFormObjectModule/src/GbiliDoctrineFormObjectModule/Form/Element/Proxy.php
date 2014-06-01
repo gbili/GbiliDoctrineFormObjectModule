@@ -17,7 +17,7 @@
  * <http://www.doctrine-project.org>.
  */
 
-namespace Blog\Form\Element;
+namespace GbiliDoctrineFormObjectModule\Form\Element;
 
 use RuntimeException;
 use ReflectionMethod;
