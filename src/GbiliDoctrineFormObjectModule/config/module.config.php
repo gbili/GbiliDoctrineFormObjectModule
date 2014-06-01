@@ -4,12 +4,12 @@ return array(
     // Zend\Form\FormElementManager configuration
     'form_elements' => array(
         'aliases' => array(
-            'objectselect'        => __NAMESPACE__ . '\Form\Element\ObjectSelect',
-            'objectradio'         => __NAMESPACE__ . '\Form\Element\ObjectRadio',
-            'objectselectnested' => __NAMESPACE__ . '\Form\Element\ObjectSelectNested',
+            'objectselect'        => 'GbiliDoctrineFormObjectModule\Form\Element\ObjectSelect',
+            'objectradio'         => 'GbiliDoctrineFormObjectModule\Form\Element\ObjectRadio',
+            'objectselectnested' => 'GbiliDoctrineFormObjectModule\Form\Element\ObjectSelectNested',
         ),
         'factories' => array(
-            __NAMESPACE__ . '\Form\Element\ObjectSelect' => function(ServiceLocatorInterface $pluginManager) {
+            'GbiliDoctrineFormObjectModule\Form\Element\ObjectSelect' => function(ServiceLocatorInterface $pluginManager) {
                 $sm = $pluginManager->getServiceLocator();
                 $em = $sm->get('Doctrine\ORM\EntityManager');
                 $element = new Form\Element\ObjectSelect;
@@ -18,7 +18,7 @@ return array(
 
                 return $element;
             },
-            __NAMESPACE__ . '\Form\Element\ObjectRadio' => function(ServiceLocatorInterface $pluginManager) {
+            'GbiliDoctrineFormObjectModule\Form\Element\ObjectRadio' => function(ServiceLocatorInterface $pluginManager) {
                 $sm = $pluginManager->getServiceLocator();
                 $em = $sm->get('Doctrine\ORM\EntityManager');
                 $element = new Form\Element\ObjectRadio;
@@ -27,7 +27,7 @@ return array(
 
                 return $element;
             },
-            __NAMESPACE__ . '\Form\Element\ObjectSelectNested' => function(ServiceLocatorInterface $pluginManager) {
+            'GbiliDoctrineFormObjectModule\Form\Element\ObjectSelectNested' => function(ServiceLocatorInterface $pluginManager) {
                 $sm = $pluginManager->getServiceLocator();
                 $em = $sm->get('Doctrine\ORM\EntityManager');
                 $element = new Form\Element\ObjectSelectNested;
